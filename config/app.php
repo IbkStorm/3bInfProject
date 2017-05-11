@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Laracademy\Commands\MakeServiceProvider::class,
 
         /*
          * Application Service Providers...
