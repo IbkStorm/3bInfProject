@@ -13,7 +13,7 @@ class CreatePlaylistAPIsTable extends Migration
      */
     public function up()
     {
-        Schema::create('playlist__a_p_is', function (Blueprint $table) {
+        Schema::create('playlistapis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreatePlaylistAPIsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('playlist__a_p_is');
+        Schema::dropIfExists('playlistapis');
     }
 }

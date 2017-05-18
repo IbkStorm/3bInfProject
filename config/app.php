@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laracademy\Commands\MakeServiceProvider::class,
+        Njasm\Laravel\Soundcloud\SoundcloudProvider::class,
 
         /*
          * Application Service Providers...
@@ -228,6 +229,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Soundcloud' => Njasm\Laravel\Soundcloud\Facades\Soundcloud::class,
     ],
 
 ];

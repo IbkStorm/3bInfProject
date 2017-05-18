@@ -10,7 +10,8 @@
         "laracademy/interactive-make": "^0.9.0",
         "laravel/framework": "5.4.*",
         "laravel/socialite": "^3.0",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "njasm/laravel5-soundcloud": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.3",

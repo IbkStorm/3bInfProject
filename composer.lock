@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e667b1c326cda81036abcd627c2eba",
+    "content-hash": "4ad424546d7be6fe490d8d4a118ce87e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -851,16 +851,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.22",
+            "version": "v5.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d"
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ad82327705658dbf5f0ce72805caa950dfbe150d",
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d",
                 "shasum": ""
             },
             "require": {
@@ -976,7 +976,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-05-08T21:45:45+00:00"
+            "time": "2017-05-11T20:10:35+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -1463,6 +1463,102 @@
             "time": "2017-03-05T18:23:57+00:00"
         },
         {
+            "name": "njasm/laravel5-soundcloud",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/njasm/laravel5-soundcloud.git",
+                "reference": "328a1144f75cd82cbc006c6a9d90e4e7fc8c96e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/njasm/laravel5-soundcloud/zipball/328a1144f75cd82cbc006c6a9d90e4e7fc8c96e9",
+                "reference": "328a1144f75cd82cbc006c6a9d90e4e7fc8c96e9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "njasm/soundcloud": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Njasm\\Laravel\\Soundcloud\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nelson João Morais",
+                    "email": "njmorais@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Soundcloud API Service Provider For Laravel 5",
+            "homepage": "http://github.com/njasm/laravel5-soundcloud",
+            "keywords": [
+                "api",
+                "laravel",
+                "soundcloud",
+                "webservice",
+                "webservices"
+            ],
+            "time": "2017-03-11T20:03:36+00:00"
+        },
+        {
+            "name": "njasm/soundcloud",
+            "version": "2.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/njasm/soundcloud.git",
+                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/njasm/soundcloud/zipball/5ddaaa492db54a820df31f57cbfb43e50f9650e3",
+                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.4.*@dev",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Njasm\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nelson João Morais",
+                    "email": "njmorais@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Soundcloud API Wrapper written in PHP with OAuth 2.0 support",
+            "homepage": "http://github.com/njasm/soundcloud",
+            "keywords": [
+                "api",
+                "soundcloud",
+                "webservice",
+                "webservices"
+            ],
+            "time": "2016-01-12T23:50:19+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v2.0.10",
             "source": {
@@ -1609,16 +1705,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.3",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e"
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/38a9d21406597a0440690eafbcb0222f528c8ac6",
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1774,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-03-19T21:40:44+00:00"
+            "time": "2017-05-17T06:49:19+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -4292,7 +4388,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "njasm/laravel5-soundcloud": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
