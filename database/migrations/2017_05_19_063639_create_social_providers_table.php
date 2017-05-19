@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlaylistAPIsTable extends Migration
+class CreateSocialProvidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreatePlaylistAPIsTable extends Migration
      */
     public function up()
     {
-        Schema::create('playlistapis', function (Blueprint $table) {
+        Schema::create('social_providers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('provider_id');
+            $table->string('provider');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreatePlaylistAPIsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('playlistapis');
+        Schema::dropIfExists('social_providers');
     }
 }
