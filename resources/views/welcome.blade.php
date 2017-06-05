@@ -66,6 +66,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+          <canvas class="particles-js-canvas-el"></canvas>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
@@ -91,5 +92,7 @@
                 </div>
             </div>
         </div>
+      <!-- Scripts -->
+      <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
