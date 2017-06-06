@@ -5,12 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Plister</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -23,12 +24,6 @@
 
             .full-height {
                 height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
             }
 
             .position-ref {
@@ -47,6 +42,7 @@
 
             .title {
                 font-size: 84px;
+                font-weight: bold;
             }
 
             .links > a {
@@ -62,10 +58,20 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            h3{
+              margin: 0;
+            }
+            .btn{
+              margin: 30px;
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 18px;
+              padding: 10px 20px;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height">
           <canvas class="particles-js-canvas-el"></canvas>
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -79,17 +85,14 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title">
+                    Convert your music playlists
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <h3>Stop wasting your time transferring playlists and music data between</br>streaming platforms. Let Plister do the job.</h3>
                 </div>
+                <a class="btn btn-info" href="{{ url('/register') }}">Start now</a>
             </div>
         </div>
       <!-- Scripts -->

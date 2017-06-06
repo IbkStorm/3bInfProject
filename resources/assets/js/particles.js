@@ -1,12 +1,3 @@
-/* -----------------------------------------------
-/* Author : Vincent Garreau  - vincentgarreau.com
-/* MIT license: http://opensource.org/licenses/MIT
-/* Demo / Generator : vincentgarreau.com/particles.js
-/* GitHub : github.com/VincentGarreau/particles.js
-/* How to use? : Check the GitHub README
-/* v2.0.0
-/* ----------------------------------------------- */
-
 var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
@@ -23,25 +14,25 @@ var pJS = function(tag_id, params){
         value: 80,
         density: {
           enable: true,
-          value_area: 800
+          value_area: 800,
         }
       },
       color: {
-        value: "#ffffff"
+        value: "#ffffff",
       },
       shape: {
         type: "circle",
         stroke: {
           width: 0,
-          color: "#000000"
+          color: "#000000",
         },
         polygon: {
-          nb_sides: 5
+          nb_sides: 5,
         },
         image: {
           src: "img/github.svg",
           width: 100,
-          height: 100
+          height: 100,
         }
       },
       opacity: {
@@ -51,7 +42,7 @@ var pJS = function(tag_id, params){
           enable: false,
           speed: 1,
           opacity_min: 0.1,
-          sync: false
+          sync: false,
         }
       },
       size: {
@@ -61,7 +52,7 @@ var pJS = function(tag_id, params){
           enable: false,
           speed: 40,
           size_min: 0.1,
-          sync: false
+          sync: false,
         }
       },
       line_linked: {
@@ -69,7 +60,7 @@ var pJS = function(tag_id, params){
         distance: 150,
         color: "#ffffff",
         opacity: 0.4,
-        width: 1
+        width: 1,
       },
       move: {
         enable: true,
@@ -82,7 +73,7 @@ var pJS = function(tag_id, params){
         attract: {
           enable: false,
           rotateX: 600,
-          rotateY: 1200
+          rotateY: 1200,
         }
       }
     },
@@ -91,19 +82,19 @@ var pJS = function(tag_id, params){
       events: {
         onhover: {
           enable: true,
-          mode: "grab"
+          mode: "grab",
         },
         onclick: {
           enable: true,
-          mode: "push"
+          mode: "push",
         },
-        resize: true
+        resize: true,
       },
       modes: {
         grab: {
           distance: 119.88011988011988,
           line_linked: {
-            opacity: 1
+            opacity: 1,
           }
         },
         bubble: {
@@ -111,17 +102,17 @@ var pJS = function(tag_id, params){
           size: 40,
           duration: 2,
           opacity: 8,
-          speed: 3
+          speed: 3,
         },
         repulse: {
           distance: 31.96803196803197,
-          duration: 0.4
+          duration: 0.4,
         },
         push: {
-          particles_nb: 4
+          particles_nb: 4,
         },
         remove: {
-          particles_nb: 2
+          particles_nb: 2,
         }
       }
     },
@@ -129,9 +120,9 @@ var pJS = function(tag_id, params){
     fn: {
       interact: {},
       modes: {},
-      vendors:{}
+      vendors:{},
     },
-    tmp: {}
+    tmp: {},
   };
 
   var pJS = this.pJS;
@@ -152,7 +143,7 @@ var pJS = function(tag_id, params){
     mode_bubble_size: pJS.interactivity.modes.bubble.size,
     mode_repulse_distance: pJS.interactivity.modes.repulse.distance
   };
-
+ 
 
   pJS.fn.retinaInit = function(){
 
