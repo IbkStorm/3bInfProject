@@ -143,7 +143,7 @@ var pJS = function(tag_id, params){
     mode_bubble_size: pJS.interactivity.modes.bubble.size,
     mode_repulse_distance: pJS.interactivity.modes.repulse.distance
   };
- 
+
 
   pJS.fn.retinaInit = function(){
 

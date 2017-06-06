@@ -71,7 +71,7 @@
         </style>
     </head>
     <body>
-        <div class="position-ref full-height">
+        <div class="position-ref full-height" id="particles-js">
           <canvas class="particles-js-canvas-el"></canvas>
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -97,5 +97,11 @@
         </div>
       <!-- Scripts -->
       <script src="{{ asset('js/app.js') }}"></script>
+      <script>
+          /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+          particlesJS.load('particles-js', 'particles.json', function() {
+          console.log('callback - particles.js config loaded');
+          });
+      </script>
     </body>
 </html>
