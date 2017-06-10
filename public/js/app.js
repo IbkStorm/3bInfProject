@@ -31652,7 +31652,7 @@ var Component = __webpack_require__(36)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\mario\\PhpstormProjects\\3bInfProject\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "C:\\xampp\\htdocs\\3bINF\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31663,9 +31663,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0a404b02", Component.options)
+    hotAPI.createRecord("data-v-2cad3140", Component.options)
   } else {
-    hotAPI.reload("data-v-0a404b02", Component.options)
+    hotAPI.reload("data-v-2cad3140", Component.options)
   }
 })()}
 
@@ -31675,6 +31675,9 @@ module.exports = Component.exports
 /***/ }),
 /* 36 */
 /***/ (function(module, exports) {
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
 
 module.exports = function normalizeComponent (
   rawScriptExports,
@@ -31710,11 +31713,12 @@ module.exports = function normalizeComponent (
 
   // inject cssModules
   if (cssModules) {
-    var computed = options.computed || (options.computed = {})
+    var computed = Object.create(options.computed || null)
     Object.keys(cssModules).forEach(function (key) {
       var module = cssModules[key]
       computed[key] = function () { return module }
     })
+    options.computed = computed
   }
 
   return {
@@ -31750,7 +31754,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0a404b02", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2cad3140", module.exports)
   }
 }
 
@@ -31760,7 +31764,7 @@ if (false) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/*!
- * Vue.js v2.3.4
+ * Vue.js v2.3.3
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
@@ -36189,7 +36193,7 @@ Object.defineProperty(Vue$3.prototype, '$ssrContext', {
   }
 });
 
-Vue$3.version = '2.3.4';
+Vue$3.version = '2.3.3';
 
 /*  */
 
@@ -36680,7 +36684,6 @@ function createPatchFunction (backend) {
   function initComponent (vnode, insertedVnodeQueue) {
     if (isDef(vnode.data.pendingInsert)) {
       insertedVnodeQueue.push.apply(insertedVnodeQueue, vnode.data.pendingInsert);
-      vnode.data.pendingInsert = null;
     }
     vnode.elm = vnode.componentInstance.$el;
     if (isPatchable(vnode)) {
