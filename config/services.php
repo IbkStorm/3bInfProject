@@ -52,10 +52,14 @@ return [
         'client_secret' => env('GOOGLE_PLUS_APP_SECRET'),
         'redirect' => env('GOOGLE_PLUS_CALLBACK_URL'),
     ],
-
     'soundcloud' => [
-        'client_id' => env('SOUNDCLOUD_CLIENT_ID'),
-        'client_secret' => env('SOUNDCLOUD_CLIENT_SECRET'),
-        'callback_url' => env('SOUNDCLOUD_CALLBACK_URL'),
+        'client_id' => env('SOUNDCLOUD_KEY'),
+        'client_secret' => env('SOUNDCLOUD_SECRET'),
+        'redirect' => env('SOUNDCLOUD_REDIRECT_URI'),
+    ],
+    'spotify' => [
+        'client_id' => env('SPOTIFY_KEY'),
+        'client_secret' => env('SPOTIFY_SECRET'),
+        'redirect' => env('SPOTIFY_REDIRECT_URI'),
     ],
 ];
