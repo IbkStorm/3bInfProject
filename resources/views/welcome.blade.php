@@ -41,10 +41,10 @@
       <!-- Scripts -->
         <script src="{{ asset('js/particles.js') }}"></script>
       <script src="{{ asset('js/app.js') }}"></script>
-        <script>
+      <script type="text/javascript">
           /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
           particlesJS.load('particles-js', './particles.json', function() {
-          console.log('callback - particles.js config loaded');
+              console.log('callback - particles.js config loaded');
           });
       </script>
     </body>

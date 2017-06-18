@@ -788,7 +788,19 @@ window.Vue = __webpack_require__(38);
 Vue.component('example', __webpack_require__(35));
 
 var app = new Vue({
-  el: '#app'
+    el: '#app'
+});
+
+$(document).ready(function () {
+
+    if ($('#home').length) {
+        $('.navbar').find('.container').removeClass('container').addClass('container-fluid');
+        $('body').attr('id', 'particles-js');
+    }
+
+    particlesJS.load('particles-js', './particles.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
 });
 
 /***/ }),
@@ -31676,9 +31688,6 @@ module.exports = Component.exports
 /* 36 */
 /***/ (function(module, exports) {
 
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
@@ -31713,12 +31722,11 @@ module.exports = function normalizeComponent (
 
   // inject cssModules
   if (cssModules) {
-    var computed = Object.create(options.computed || null)
+    var computed = options.computed || (options.computed = {})
     Object.keys(cssModules).forEach(function (key) {
       var module = cssModules[key]
       computed[key] = function () { return module }
     })
-    options.computed = computed
   }
 
   return {
@@ -31764,7 +31772,7 @@ if (false) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/*!
- * Vue.js v2.3.3
+ * Vue.js v2.3.4
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
@@ -36193,7 +36201,7 @@ Object.defineProperty(Vue$3.prototype, '$ssrContext', {
   }
 });
 
-Vue$3.version = '2.3.3';
+Vue$3.version = '2.3.4';
 
 /*  */
 
@@ -36684,6 +36692,7 @@ function createPatchFunction (backend) {
   function initComponent (vnode, insertedVnodeQueue) {
     if (isDef(vnode.data.pendingInsert)) {
       insertedVnodeQueue.push.apply(insertedVnodeQueue, vnode.data.pendingInsert);
+      vnode.data.pendingInsert = null;
     }
     vnode.elm = vnode.componentInstance.$el;
     if (isPatchable(vnode)) {

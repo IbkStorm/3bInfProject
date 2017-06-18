@@ -19,6 +19,10 @@ $fa-font-path: "../../../node_modules/font-awesome/fonts" !default;
 $blue: #8eb4cb;
 $darkblue: #7da8c3;
 $dark: #444444;
+$spotifyGreen: #7ab800;
+$spotifyGreenDark: #3a5700;
+$youtubeRed: #DC2725;
+$youtubeRedDark: #B21E1C;
 
 html, body {
     background-color: $dark;
@@ -28,9 +32,77 @@ html, body {
     height: 100vh;
     margin: 0;
 }
+#app{
+    z-index: 1;
+    position: relative;
+}
+
+.btn-youtube{color:#fff;background-color:#DC2725;border-color:rgba(0,0,0,0.2)}.btn-youtube:hover,.btn-youtube:focus,.btn-youtube:active,.btn-youtube.active,.open>.dropdown-toggle.btn-youtube{color:#fff;background-color:#B21E1C;border-color:rgba(0,0,0,0.2)}
+.btn-youtube:active,.btn-youtube.active,.open>.dropdown-toggle.btn-youtube{background-image:none}
+.btn-youtube.disabled,.btn-youtube[disabled],fieldset[disabled] .btn-youtube,.btn-youtube.disabled:hover,.btn-youtube[disabled]:hover,fieldset[disabled] .btn-youtube:hover,.btn-youtube.disabled:focus,.btn-youtube[disabled]:focus,fieldset[disabled] .btn-youtube:focus,.btn-youtube.disabled:active,.btn-youtube[disabled]:active,fieldset[disabled] .btn-youtube:active,.btn-youtube.disabled.active,.btn-youtube[disabled].active,fieldset[disabled] .btn-youtube.active{background-color:#DC2725;border-color:rgba(0,0,0,0.2)}
+.btn-youtube .badge{color:#DC2725;background-color:#fff}
+
+.btn-spotify{color:#fff;background-color:#7ab800;border-color:rgba(0,0,0,0.2)}.btn-spotify:hover,.btn-spotify:focus,.btn-spotify:active,.btn-spotify.active,.open>.dropdown-toggle.btn-spotify{color:#fff;background-color:#3a5700;border-color:rgba(0,0,0,0.2)}
+.btn-spotify:active,.btn-spotify.active,.open>.dropdown-toggle.btn-spotify{background-image:none}
+.btn-spotify.disabled,.btn-spotify[disabled],fieldset[disabled] .btn-spotify,.btn-spotify.disabled:hover,.btn-spotify[disabled]:hover,fieldset[disabled] .btn-spotify:hover,.btn-spotify.disabled:focus,.btn-spotify[disabled]:focus,fieldset[disabled] .btn-spotify:focus,.btn-spotify.disabled:active,.btn-spotify[disabled]:active,fieldset[disabled] .btn-spotify:active,.btn-spotify.disabled.active,.btn-spotify[disabled].active,fieldset[disabled] .btn-spotify.active{background-color:#7ab800;border-color:rgba(0,0,0,0.2)}
+.btn-spotify .badge{color:#7ab800;background-color:#fff}
+
+.btn-spotify, .btn-youtube{
+    display: block;
+}
+
+.spotify{
+    color: $spotifyGreen;
+    &:hover{
+        color: $spotifyGreenDark;
+    }
+}
+
+.youtube{
+    color: $youtubeRed;
+    &:hover{
+        color: $youtubeRedDark;
+    }
+}
 
 .full-height {
     height: 100vh;
+}
+
+.playlist-group{
+    width: 100%;
+    .avatar{
+        padding: 10px 15px;
+        border-radius: 30%;
+        vertical-align: bottom;
+        text-transform: uppercase;
+        margin-right: 15px;
+        &.avatar-spotify{
+            background-color: $spotifyGreen;
+            color: #fff;
+        }
+        &.avatar-youtube{
+            background-color: $youtubeRed;
+            color: #fff;
+        }
+    }
+    .btn{
+        margin: 0;
+        padding: 10px;
+        background: none;
+    }
+    div{
+        display: inline-block;
+    }
+    .playlist-titel, .playlist-info{
+        display: block;
+        p{
+            margin: 0;
+        }
+    }
+    .toolbar{
+        float: right;
+    }
 }
 
 .position-ref {

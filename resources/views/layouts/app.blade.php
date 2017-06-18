@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
 
     <!-- Scripts -->
     <script>
@@ -82,6 +83,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/particles.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

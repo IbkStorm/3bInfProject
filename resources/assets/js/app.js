@@ -20,3 +20,16 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+
+$( document ).ready(function() {
+
+    if ($('#home').length) {
+        $('.navbar').find('.container').removeClass('container').addClass('container-fluid');
+        $('body').attr('id', 'particles-js');
+    }
+
+    particlesJS.load('particles-js', './particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+});
