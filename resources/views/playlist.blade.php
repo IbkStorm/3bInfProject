@@ -33,7 +33,7 @@
                                     <p>{{$playlist->name}}</p>
                                 </div>
                                 <div class="playlist-info">
-                                    <p>Playlist <a href="#" class="spotify">Spotify</a></p>
+                                    <p>Playlist <a href="{{$playlist->href}}" class="spotify">Spotify</a></p>
                                 </div>
                             </div>
                             <div class="toolbar">
