@@ -43,6 +43,27 @@
                             </div>
                         </div>
                     </div>
+                    <div class="group playlist-group">
+                        <div class="avatar avatar-youtube">
+                            y
+                        </div>
+                        <div class="playlist-content">
+                            <div class="playlist-titel">
+                                <p>Test-Playlistname</p>
+                            </div>
+                            <div class="playlist-info">
+                                <p>Playlist <a href="#" class="youtube">Youtube</a></p>
+                            </div>
+                        </div>
+                        <div class="toolbar">
+                            <div class="tool tool-convert">
+                                <button class="btn"><span class="glyphicon glyphicon-import"></span></button>
+                            </div>
+                            <div class="tool tool-context">
+                                <button class="btn"><span class="glyphicon glyphicon-th"></span></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
