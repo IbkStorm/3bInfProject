@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Socialite;
+use App\SocialProvider;
 
 class RegisterController extends Controller
 {
@@ -72,15 +74,18 @@ class RegisterController extends Controller
     /**
      * Redirect the user to the GitHub authentication page.
      *
+     * @param $provider
      * @return Response
      */
     public function redirectToProvider($provider)
     {
         return Socialite::driver($provider)->redirect();
     }
+
     /**
      * Obtain the user information from GitHub.
      *
+     * @param $provider
      * @return Response
      */
     public function handleProviderCallback($provider)

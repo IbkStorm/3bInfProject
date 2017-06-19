@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "00c580c7dcef7891141f9bb23471290c",
+    "content-hash": "009313a1b7a7f2834b19201ff818bbe5",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1532,16 +1532,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.1",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1562,7 @@
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "sentry/sentry": "^0.13",
-                "swiftmailer/swiftmailer": "~5.3"
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -1606,7 +1606,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-03-13T07:08:03+00:00"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1755,102 +1755,6 @@
                 "php"
             ],
             "time": "2017-03-05T18:23:57+00:00"
-        },
-        {
-            "name": "njasm/laravel5-soundcloud",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/njasm/laravel5-soundcloud.git",
-                "reference": "328a1144f75cd82cbc006c6a9d90e4e7fc8c96e9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/njasm/laravel5-soundcloud/zipball/328a1144f75cd82cbc006c6a9d90e4e7fc8c96e9",
-                "reference": "328a1144f75cd82cbc006c6a9d90e4e7fc8c96e9",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "njasm/soundcloud": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Njasm\\Laravel\\Soundcloud\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelson João Morais",
-                    "email": "njmorais@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Soundcloud API Service Provider For Laravel 5",
-            "homepage": "http://github.com/njasm/laravel5-soundcloud",
-            "keywords": [
-                "api",
-                "laravel",
-                "soundcloud",
-                "webservice",
-                "webservices"
-            ],
-            "time": "2017-03-11T20:03:36+00:00"
-        },
-        {
-            "name": "njasm/soundcloud",
-            "version": "2.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/njasm/soundcloud.git",
-                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/njasm/soundcloud/zipball/5ddaaa492db54a820df31f57cbfb43e50f9650e3",
-                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.4.*@dev",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Njasm\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelson João Morais",
-                    "email": "njmorais@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Soundcloud API Wrapper written in PHP with OAuth 2.0 support",
-            "homepage": "http://github.com/njasm/soundcloud",
-            "keywords": [
-                "api",
-                "soundcloud",
-                "webservice",
-                "webservices"
-            ],
-            "time": "2016-01-12T23:50:19+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3766,6 +3670,56 @@
             "time": "2017-04-12T18:52:22+00:00"
         },
         {
+            "name": "njasm/soundcloud",
+            "version": "2.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/njasm/soundcloud.git",
+                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/njasm/soundcloud/zipball/5ddaaa492db54a820df31f57cbfb43e50f9650e3",
+                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.4.*@dev",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Njasm\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nelson João Morais",
+                    "email": "njmorais@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Soundcloud API Wrapper written in PHP with OAuth 2.0 support",
+            "homepage": "http://github.com/njasm/soundcloud",
+            "keywords": [
+                "api",
+                "soundcloud",
+                "webservice",
+                "webservices"
+            ],
+            "time": "2016-01-12T23:50:19+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "1.0",
             "source": {
@@ -5041,9 +4995,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "njasm/laravel5-soundcloud": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -36,7 +36,7 @@ class SpotifyController extends Controller
 
         session(['spotify_token' => $accessToken]);
         session(['spotify_refresh' => $refreshToken]);
-        return redirect('/playlist');
+        return redirect('/home');
 
 
     }

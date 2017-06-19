@@ -17,15 +17,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
 
-Route::get('soundcloud/login', 'SoundCloudController@SoundcloudLogin');
-Route::get('soundcloud/callback', 'SoundCloudController@SoundcloudLogin');
+Route::middleware('auth')->group(function () {
+    Route::get('soundcloud/login', 'SoundCloudController@SoundcloudLogin');
+    Route::get('soundcloud/callback', 'SoundCloudController@SoundcloudLogin');
 
-Route::get('spotify/login', 'SpotifyController@SpotifyLogin');
-Route::get('spotify/callback', 'SpotifyController@SpotifyCallback');
+    Route::get('spotify/login', 'SpotifyController@SpotifyLogin');
+    Route::get('spotify/callback', 'SpotifyController@SpotifyCallback');
 
-Route::get('playlist', 'PlaylistController@index');
+    Route::get('/home', 'PlaylistController@index')->name('home');
+    Route::get('/home/{id}', 'PlaylistController@show');
+    Route::get('/youtube', 'YoutubeController@youtube');
+});

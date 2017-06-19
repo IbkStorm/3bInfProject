@@ -13,10 +13,18 @@ class PlaylistController extends Controller
             $api = new SpotifyWebAPI();
             $api->setAccessToken($value);
            $playpists =$api->getMyPlaylists();
-            return view('playlist')->with('spotifyplaylists', $playpists);
+            return view('home')->with('playlists', $playpists);
 
         }catch(\Exception $e){
-            // catch code
+            return view('home');
         }
+    }
+    public function show($id){
+        $value = session('spotify_token');
+        $api = new SpotifyWebAPI();
+        $api->setAccessToken($value);
+        $me = $api->me();
+        //$list = $api->getUserPlaylist($me->id,$id);
+        return dd($me->id);
     }
 }

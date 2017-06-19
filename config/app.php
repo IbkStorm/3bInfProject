@@ -167,10 +167,9 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        //Laravel\Socialite\SocialiteServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
         Laracademy\Commands\MakeServiceProvider::class,
-        Njasm\Laravel\Soundcloud\SoundcloudProvider::class,
         PulkitJalan\Google\GoogleServiceProvider::class,
 
         /*
@@ -231,7 +230,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Soundcloud' => Njasm\Laravel\Soundcloud\Facades\Soundcloud::class,
         'Google' => PulkitJalan\Google\Facades\Google::class,
     ],
 
