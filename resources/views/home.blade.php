@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <a href="#" class="btn btn-spotify">Spotify</a>
+                    <a href="{{ url('/spotify/login') }}" class="btn btn-spotify">Spotify</a>
                     <a href="#" class="btn btn-youtube">Youtube</a>
                 </div>
             </div>
