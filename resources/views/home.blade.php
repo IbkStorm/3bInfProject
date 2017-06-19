@@ -46,6 +46,9 @@
                 </div>
             </div>
         </div>
+        <div class="playlist-overlay">
+
+        </div>
     </div>
 </div>
 @endsection

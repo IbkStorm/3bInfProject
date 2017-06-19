@@ -161,15 +161,62 @@ a{
 h3{
   margin: 0;
 }
-.btn{
-  margin: 30px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 10px 20px;
+
+.link-wrapper{
+    display: flex;
+    justify-content: center;
+    .btn{
+        width: 125px;
+        margin: 0 10px;
+    }
+}
+
+.form-seperator{
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 8px 0;
+    .seperator-hr{
+        -webkit-box-flex: 1;
+        -moz-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        height: 0;
+        border: none;
+        border-top: 1px solid #d0ced5;
+    }
+    .seperator-message{
+        padding: 8px 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #d0ced5;
+    }
 }
 
 .btn-primary{
+    &.btn{
+        margin: 30px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 10px 20px;
+    }
     background-color: #8eb4cb;
     border-color: #7da8c3;
     &:hover, &:active, &:focus{

@@ -7,17 +7,24 @@
             <div class="panel">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook">
-                        <span class="fa fa-facebook"></span> Sign in with Facebook
-                    </a>
+                    <div class="link-wrapper">
+                        <a href="{{ url('/auth/facebook') }}" class="btn btn-social btn-facebook">
+                            <span class="fa fa-facebook"></span>Facebook
+                        </a>
 
-                    <a href="{{ url('/auth/twitter') }}" class="btn btn-block btn-social btn-twitter">
-                        <span class="fa fa-twitter"></span> Sign in with Twitter
-                    </a>
+                        <a href="{{ url('/auth/twitter') }}" class="btn btn-social btn-twitter">
+                            <span class="fa fa-twitter"></span>Twitter
+                        </a>
 
-                    <a href="{{ url('/auth/google') }}" class="btn btn-block btn-social btn-google">
-                        <span class="fa fa-google"></span> Sign in with Google
-                    </a>
+                        <a href="{{ url('/auth/google') }}" class="btn btn-social btn-google">
+                            <span class="fa fa-google"></span>Google
+                        </a>
+                    </div>
+                    <div class="form-seperator">
+                        <hr class="seperator-hr">
+                        <span class="seperator-message">OR</span>
+                        <hr class="seperator-hr">
+                    </div>
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
