@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid" id="home">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3 col-lg-2">
             <div class="panel panel">
                 <div class="panel-heading">
                     <h3>Anbieter</h3>
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9 col-lg-10">
             <div class="panel panel">
                 <div class="panel-heading">
                     <h3>Playlists</h3>
