@@ -3,28 +3,61 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mockery\Exception;
 use SpotifyWebAPI\SpotifyWebAPI;
+use SpotifyWebAPI\Session;
+use Google;
 
 class PlaylistController extends Controller
 {
-    public function index(){
-        try{
+    public function index()
+    {
+        $playpists = null;
+        try {
             $value = session('spotify_token');
             $api = new SpotifyWebAPI();
             $api->setAccessToken($value);
-           $playpists =$api->getMyPlaylists();
-            return view('home')->with('playlists', $playpists);
+            $spotifyplaylists = $api->getMyPlaylists();
 
-        }catch(\Exception $e){
-            return view('home');
+        } catch (\Exception $e) {
+            if ($e->getCode() == 401){
+                return redirect('spotify/refresh');
+            }else{
+               return dd($e);
+
+            }
         }
+
+        try {
+            $googleClient = Google::getClient();
+            $youtubevalue = session('youtube_token');
+            $googleClient->setAccessToken($youtubevalue);
+            $youtube = Google::make('Youtube');
+            $youtubeplaylists = $youtube->playlists->listPlaylists('snippet,contentDetails', array('mine' => true));
+
+            //return dd($youtubeplaylists);
+
+        } catch (\Exception $e) {
+            return dd($e);
+        }
+
+        return view('playlist')->with(['spotifyplaylists' => $spotifyplaylists, 'youtubeplaylists' => $youtubeplaylists]);
     }
-    public function show($id){
-        $value = session('spotify_token');
-        $api = new SpotifyWebAPI();
-        $api->setAccessToken($value);
-        $me = $api->me();
-        //$list = $api->getUserPlaylist($me->id,$id);
-        return dd($me->id);
+
+    public function show($userid, $playlistid)
+    {
+        try {
+            $value = session('spotify_token');
+            $api = new SpotifyWebAPI();
+            $api->setAccessToken($value);
+            $list = $api->getUserPlaylist($userid, $playlistid);
+            dd($list);
+        } catch (\Exception $e) {
+            if ($e->getCode() == 401){
+               return redirect('spotify/refresh');
+            }else{
+               return dd($e);
+            }
+        }
     }
 }

@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
@@ -26,8 +28,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('spotify/login', 'SpotifyController@SpotifyLogin');
     Route::get('spotify/callback', 'SpotifyController@SpotifyCallback');
+    Route::get('spotify/refresh', 'SpotifyController@SpotifyRefresh');
 
-    Route::get('/home', 'PlaylistController@index')->name('home');
-    Route::get('/home/{id}', 'PlaylistController@show');
-    Route::get('/youtube', 'YoutubeController@youtube');
+    Route::get('/youtube/login', 'YoutubeController@YoutubeLogin');
+    Route::get('/youtube/callback', 'YoutubeController@YoutubeCallback');
+
+    Route::get('playlists', 'PlaylistController@index');
+    Route::get('/playlists/{userid}/{playlistid}', 'PlaylistController@show');
 });

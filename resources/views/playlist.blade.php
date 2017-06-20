@@ -16,6 +16,7 @@
                 </div>
             </div>
             <div class="col-md-9 col-lg-10">
+                @if($spotifyplaylists || $youtubeplaylists =! null)
                 <div class="panel panel">
                     <div class="panel-heading">
                         <h3>Playlists</h3>
@@ -33,7 +34,7 @@
                                     <p>{{$playlist->name}}</p>
                                 </div>
                                 <div class="playlist-info">
-                                    <p>Playlist <a href="{{$playlist->href}}" class="spotify">Spotify</a></p>
+                                    <p>Playlist <a href="{{$playlist->external_urls->spotify}}" class="spotify">Spotify</a></p>
                                 </div>
                             </div>
                             <div class="toolbar">
@@ -41,13 +42,28 @@
                                     <button class="btn"><span class="glyphicon glyphicon-import"></span></button>
                                 </div>
                                 <div class="tool tool-context">
-                                    <button class="btn"><span class="glyphicon glyphicon-th"></span></button>
+                                    <button class="btn"><a href="{{ url('playlists', [$playlist->owner->id, $playlist->id]) }}"><span class="glyphicon glyphicon-th"></span></a></button>
                                 </div>
                             </div>
                         </div>
                         @endforeach
+                        @foreach($youtubeplaylists as $playlist)
+                        <div class="group playlist-group">
+                            <div class="avatar avatar-youtube">
+                                y
+                            </div>
+                            <div class="playlist-content">
+                                <div class="playlist-titel">
+                                    <p>{{ $playlist->snippet->title }}</p>
+                                </div>
+                                <div class="playlist-info">
+                                    <p>Playlist <a href="#" class="youtube">Youtube</a></p>
+                                </div>
+                            </div>
                     </div>
+                    @endforeach
                 </div>
+                @endif
             </div>
             <div class="playlist-overlay">
 

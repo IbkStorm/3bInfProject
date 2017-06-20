@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Socialite;
 use SpotifyWebAPI\Session;
 use SpotifyWebAPI\SpotifyWebAPI;
+
 class SpotifyController extends Controller
 {
-    public function SpotifyLogin(){
+    public function SpotifyLogin()
+    {
         /*return Socialite::with('spotify')
             ->redirect();*/
         $session = new Session(env('SPOTIFY_KEY'), env('SPOTIFY_SECRET'), env('SPOTIFY_REDIRECT_URI'));
@@ -25,7 +27,8 @@ class SpotifyController extends Controller
 
     }
 
-    public function SpotifyCallback(){
+    public function SpotifyCallback()
+    {
 
         $session = new Session(env('SPOTIFY_KEY'), env('SPOTIFY_SECRET'), env('SPOTIFY_REDIRECT_URI'));
 
@@ -36,8 +39,25 @@ class SpotifyController extends Controller
 
         session(['spotify_token' => $accessToken]);
         session(['spotify_refresh' => $refreshToken]);
-        return redirect('/home');
+        return redirect('/playlists');
 
 
+    }
+
+    public function SpotifyRefresh()
+    {
+
+        $session = new Session(env('SPOTIFY_KEY'), env('SPOTIFY_SECRET'), env('SPOTIFY_REDIRECT_URI'));
+        $refreshToken = session('spotify_refresh');
+        if ($refreshToken != null) {
+            $session->refreshAccessToken($refreshToken);
+
+            $accessToken = $session->getAccessToken();
+
+            session(['spotify_token' => $accessToken]);
+            return redirect()->back();
+        }else{
+            return redirect('spotify/login');
+        }
     }
 }

@@ -7,11 +7,22 @@ use Google;
 
 class YoutubeController extends Controller
 {
-    public function youtube()
+    public function YoutubeLogin()
     {
-        $youtube = Google::make('youtube');
-        $youtube->playlists->list(array('mine' => true, 'maxResults' => 25, 'onBehalfOfContentOwner' => '', 'onBehalfOfContentOwnerChannel' => ''));
-        dd($youtube);
 
+        $googleClient = Google::getClient();
+        $url = $googleClient->createAuthUrl();
+
+        return redirect($url);
+
+    }
+
+    public function YoutubeCallback(){
+        $googleClient = Google::getClient();
+        $accessToken = $googleClient->fetchAccessTokenWithAuthCode($_GET['code']);
+
+        session(['youtube_token' => $accessToken]);
+
+        return redirect('/playlists');
     }
 }
