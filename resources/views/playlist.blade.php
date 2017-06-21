@@ -35,6 +35,7 @@
                                 </div>
                                 <div class="playlist-info">
                                     <p>Playlist <a href="{{$playlist->external_urls->spotify}}" class="spotify">Spotify</a></p>
+                                    <p><a href="{{ url('playlists/convert/spotify/youtube', [$playlist->owner->id, $playlist->id]) }}" class="spotify">TEST</a></p>
                                 </div>
                             </div>
                             <div class="toolbar">

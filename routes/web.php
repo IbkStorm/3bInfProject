@@ -34,5 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/youtube/callback', 'YoutubeController@YoutubeCallback');
 
     Route::get('playlists', 'PlaylistController@index');
-    Route::get('/playlists/{userid}/{playlistid}', 'PlaylistController@show');
+    Route::get('playlists/{userid}/{playlistid}', 'PlaylistController@show');
+
+    Route::get('playlists/convert/spotify/youtube/{userid}/{playlistid}', 'PlaylistConverterController@SpotifyToYotubeConvert');
 });
