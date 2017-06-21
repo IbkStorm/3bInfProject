@@ -35,15 +35,14 @@
                                 </div>
                                 <div class="playlist-info">
                                     <p>Playlist <a href="{{$playlist->external_urls->spotify}}" class="spotify">Spotify</a></p>
-                                    <p><a href="{{ url('playlists/convert/spotify/youtube', [$playlist->owner->id, $playlist->id]) }}" class="spotify">TEST</a></p>
                                 </div>
                             </div>
                             <div class="toolbar">
                                 <div class="tool tool-convert">
-                                    <button class="btn"><span class="glyphicon glyphicon-import"></span></button>
+                                    <a class="btn" data-toggle="tooltip" data-placement="top" title="Convert" href="{{ url('playlists/convert/spotify/youtube', [$playlist->owner->id, $playlist->id]) }}"><span class="glyphicon glyphicon-import"></span></a>
                                 </div>
                                 <div class="tool tool-context">
-                                    <button class="btn"><a href="{{ url('playlists', [$playlist->owner->id, $playlist->id]) }}"><span class="glyphicon glyphicon-th"></span></a></button>
+                                    <a class="btn" data-toggle="tooltip" data-placement="top" title="View Tracks" href="{{ url('playlists', [$playlist->owner->id, $playlist->id]) }}"><span class="glyphicon glyphicon-th"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +60,14 @@
                                 </div>
                                 <div class="playlist-info">
                                     <p>Playlist <a href="#" class="youtube">Youtube</a></p>
+                                </div>
+                            </div>
+                            <div class="toolbar">
+                                <div class="tool tool-convert">
+                                    <a class="btn" href="#" data-toggle="tooltip" data-placement="top" title="Convert"><span class="glyphicon glyphicon-import"></span></a>
+                                </div>
+                                <div class="tool tool-context">
+                                    <a href="#" class="btn" data-toggle="tooltip" data-placement="top" title="View Tracks"><span class="glyphicon glyphicon-th"></span></a>
                                 </div>
                             </div>
                     </div>

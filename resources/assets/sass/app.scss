@@ -113,6 +113,13 @@ html, body {
     }
     .toolbar{
         float: right;
+        margin-right: 10px;
+        .tool{
+            margin: 0 5px;
+        }
+        a{
+            color: $dark;
+        }
     }
 }
 
