@@ -11,18 +11,18 @@
 
                     <div class="panel-body">
                         <a href="{{ url('/spotify/login') }}" class="btn btn-spotify">Spotify</a>
-                        <a href="#" class="btn btn-youtube">Youtube</a>
+                        <a href="{{ url('/youtube/login') }}" class="btn btn-youtube">Youtube</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-9 col-lg-10">
-                @if($spotifyplaylists || $youtubeplaylists =! null)
                 <div class="panel panel">
                     <div class="panel-heading">
                         <h3>Playlists</h3>
                     </div>
 
                     <div class="panel-body">
+                        @if($spotifyplaylists)
                         @foreach($spotifyplaylists->items as $playlist)
 
                         <div class="group playlist-group">
@@ -47,6 +47,8 @@
                             </div>
                         </div>
                         @endforeach
+                        @endif
+                        @if($youtubeplaylists)
                         @foreach($youtubeplaylists as $playlist)
                         <div class="group playlist-group">
                             <div class="avatar avatar-youtube">
@@ -62,8 +64,8 @@
                             </div>
                     </div>
                     @endforeach
+                    @endif
                 </div>
-                @endif
             </div>
             <div class="playlist-overlay">
 

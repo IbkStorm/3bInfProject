@@ -47,11 +47,12 @@ return [
         'redirect' => env('TWITTER_CALLBACK_URL'),
     ],
 
-    'google-plus' => [
-        'client_id' => env('GOOGLE_PLUS_APP_ID'),
-        'client_secret' => env('GOOGLE_PLUS_APP_SECRET'),
-        'redirect' => env('GOOGLE_PLUS_CALLBACK_URL'),
+    'google' => [
+        'client_id' => env('GOOGLE_KEY'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
+
     'spotify' => [
         'client_id' => env('SPOTIFY_KEY'),
         'client_secret' => env('SPOTIFY_SECRET'),

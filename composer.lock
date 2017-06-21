@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "009313a1b7a7f2834b19201ff818bbe5",
+    "content-hash": "0cc9878931b60968dec90025b35465d8",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1050,62 +1050,6 @@
             "time": "2017-06-12T09:00:23+00:00"
         },
         {
-            "name": "kozz/laravel-guzzle-provider",
-            "version": "6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/urakozz/laravel-guzzle.git",
-                "reference": "f9609049c82e3e443ab156a6d485597b10181ec1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/urakozz/laravel-guzzle/zipball/f9609049c82e3e443ab156a6d485597b10181ec1",
-                "reference": "f9609049c82e3e443ab156a6d485597b10181ec1",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~6.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Kozz\\Laravel\\": "src/",
-                    "Kozz\\Tests\\Laravel\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hongbo Tang",
-                    "email": "thbourlove@gmail.com"
-                },
-                {
-                    "name": "Yury Kozyrev",
-                    "email": "urakozz@gmail.com"
-                }
-            ],
-            "description": "Guzzle Service Provider for Laravel 5",
-            "keywords": [
-                "Guzzle",
-                "http",
-                "laravel"
-            ],
-            "time": "2015-06-03T09:26:54+00:00"
-        },
-        {
             "name": "laracademy/interactive-make",
             "version": "0.9",
             "source": {
@@ -2041,16 +1985,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.6",
+            "version": "v0.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7028d6d525fb183d50b249b7c07598e3d386b27d"
+                "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7028d6d525fb183d50b249b7c07598e3d386b27d",
-                "reference": "7028d6d525fb183d50b249b7c07598e3d386b27d",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
+                "reference": "be969b9dc89dcaefdb9a3117fa91fa38bca19f50",
                 "shasum": ""
             },
             "require": {
@@ -2110,7 +2054,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-06-04T10:34:20+00:00"
+            "time": "2017-06-20T12:51:31+00:00"
         },
         {
             "name": "pulkitjalan/google-apiclient",
@@ -2247,6 +2191,43 @@
             "time": "2017-03-26T20:37:53+00:00"
         },
         {
+            "name": "socialiteproviders/google",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Google-Plus.git",
+                "reference": "2ff6bbd2f4d616ece912386807b59ba5f3b76895"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Google-Plus/zipball/2ff6bbd2f4d616ece912386807b59ba5f3b76895",
+                "reference": "2ff6bbd2f4d616ece912386807b59ba5f3b76895",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Google\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.de"
+                }
+            ],
+            "description": "Google OAuth2 Provider for Laravel Socialite",
+            "time": "2017-01-25T09:48:29+00:00"
+        },
+        {
             "name": "socialiteproviders/manager",
             "version": "v3.0.4",
             "source": {
@@ -2287,117 +2268,6 @@
             ],
             "description": "Easily add new or override built-in providers in Laravel Socialite.",
             "time": "2017-02-07T07:26:42+00:00"
-        },
-        {
-            "name": "socialiteproviders/soundcloud",
-            "version": "v3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/SoundCloud.git",
-                "reference": "2e1878ccaadf32bd91a6dbd4733a7039953bb437"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/SoundCloud/zipball/2e1878ccaadf32bd91a6dbd4733a7039953bb437",
-                "reference": "2e1878ccaadf32bd91a6dbd4733a7039953bb437",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "socialiteproviders/manager": "~3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\SoundCloud\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Faust",
-                    "email": "hello@brianfaust.de"
-                }
-            ],
-            "description": "SoundCloud OAuth2 Provider for Laravel Socialite",
-            "time": "2017-01-25T09:48:29+00:00"
-        },
-        {
-            "name": "socialiteproviders/spotify",
-            "version": "v3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Spotify.git",
-                "reference": "f98931f81b2726fe8622a2ea1e70f902c0df2da7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Spotify/zipball/f98931f81b2726fe8622a2ea1e70f902c0df2da7",
-                "reference": "f98931f81b2726fe8622a2ea1e70f902c0df2da7",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "socialiteproviders/manager": "~2.0 || ~3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Spotify\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Faust",
-                    "email": "hello@brianfaust.de"
-                }
-            ],
-            "description": "Spotify OAuth2 Provider for Laravel Socialite",
-            "time": "2017-04-17T04:41:57+00:00"
-        },
-        {
-            "name": "socialiteproviders/youtube",
-            "version": "v3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/YouTube.git",
-                "reference": "b3082e9a699a78a8d14d50d0651bd5d2dd292972"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/YouTube/zipball/b3082e9a699a78a8d14d50d0651bd5d2dd292972",
-                "reference": "b3082e9a699a78a8d14d50d0651bd5d2dd292972",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "socialiteproviders/manager": "~3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\YouTube\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Faust",
-                    "email": "hello@brianfaust.de"
-                }
-            ],
-            "description": "YouTube OAuth2 Provider for Laravel Socialite",
-            "time": "2017-01-25T09:48:29+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3668,56 +3538,6 @@
                 "object graph"
             ],
             "time": "2017-04-12T18:52:22+00:00"
-        },
-        {
-            "name": "njasm/soundcloud",
-            "version": "2.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/njasm/soundcloud.git",
-                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/njasm/soundcloud/zipball/5ddaaa492db54a820df31f57cbfb43e50f9650e3",
-                "reference": "5ddaaa492db54a820df31f57cbfb43e50f9650e3",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.4.*@dev",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Njasm\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelson João Morais",
-                    "email": "njmorais@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Soundcloud API Wrapper written in PHP with OAuth 2.0 support",
-            "homepage": "http://github.com/njasm/soundcloud",
-            "keywords": [
-                "api",
-                "soundcloud",
-                "webservice",
-                "webservices"
-            ],
-            "time": "2016-01-12T23:50:19+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

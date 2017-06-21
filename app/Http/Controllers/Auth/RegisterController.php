@@ -79,7 +79,7 @@ class RegisterController extends Controller
      */
     public function redirectToProvider($provider)
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::with($provider)->redirect();
     }
 
     /**
@@ -114,7 +114,7 @@ class RegisterController extends Controller
         else
             $user = $socialProvider->user;
         auth()->login($user);
-        return redirect('/home');
+        return redirect('/playlists');
     }
 
 }
