@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< Updated upstream
         <div class="container-fluid" id="tracks">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
