@@ -59,7 +59,7 @@ function show($userid, $playlistid)
         $api = new SpotifyWebAPI();
         $api->setAccessToken($value);
         $list = $api->getUserPlaylist($userid, $playlistid);
-        dd($list);
+        return view('track')->with('track', $list);
     } catch (\Exception $e) {
         if ($e->getCode() == 401) {
             return redirect('spotify/refresh');

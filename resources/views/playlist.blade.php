@@ -34,7 +34,7 @@
                                     <p>{{$playlist->name}}</p>
                                 </div>
                                 <div class="playlist-info">
-                                    <p>Playlist <a href="{{$playlist->external_urls->spotify}}" class="spotify">Spotify</a></p>
+                                    <p>Playlist <a href="{{$playlist->external_urls->spotify}}" class="spotify" target="_blank">Spotify</a></p>
                                 </div>
                             </div>
                             <div class="toolbar">
