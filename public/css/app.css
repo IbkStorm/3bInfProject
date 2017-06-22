@@ -13082,6 +13082,52 @@ fieldset[disabled] .btn-spotify.active {
   color: #3a5700;
 }
 
+#tracks img {
+  margin-bottom: 10px;
+  margin-left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+#tracks button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#tracks .pause {
+  display: none;
+}
+
+#tracks audio {
+  visibility: hidden;
+  position: absolute;
+}
+
+#tracks .group.playlist-group {
+  position: relative;
+}
+
+#tracks .group.playlist-group p {
+  margin: 0;
+}
+
+#tracks .group.playlist-group p.artists {
+  display: inline;
+}
+
+#tracks .group.playlist-group p.artists:after {
+  margin-left: 10px;
+  margin-right: 7px;
+  content: "-";
+}
+
+#tracks .group.playlist-group p:last-of-type:after {
+  display: none;
+}
+
 .youtube {
   color: #DC2725;
 }
