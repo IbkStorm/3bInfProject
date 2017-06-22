@@ -8,8 +8,20 @@ use SpotifyWebAPI\SpotifyWebAPI;
 
 class PlaylistConverterController extends Controller
 {
-    public function YoutubeToSpotifyConvert(){
+    public function YoutubeToSpotifyConvert($playlistID){
 
+        try{
+            $googleClient = Google::getClient();
+            $youtubevalue = session('youtube_token');
+            $googleClient->setAccessToken($youtubevalue);
+            $youtube = Google::make('Youtube');
+            $list =$youtube->playlists->listPlaylists('snippet,contentDetails',
+                array('id' => $playlistID));
+
+            dd($list);
+        }catch (\Exception $e){
+
+        }
     }
 
     public function SpotifyToYotubeConvert($userid, $playlistid){
@@ -52,5 +64,20 @@ class PlaylistConverterController extends Controller
         } catch (\Exception $e) {
                 return dd($e);
         }
+    }
+
+    public function createPlaylist(){
+
+        $googleClient = Google::getClient();
+        $youtubevalue = session('youtube_token');
+        $googleClient->setAccessToken($youtubevalue);
+        $youtube = Google::make('Youtube');
+        $youtube->playlists->insert( array('snippet.title' => '',
+            'snippet.description' => '',
+            'snippet.tags[]' => '',
+            'snippet.defaultLanguage' => '',
+            'status.privacyStatus' => ''),
+            'snippet,status',
+            array('onBehalfOfContentOwner' => ''));
     }
 }

@@ -64,7 +64,7 @@
                             </div>
                             <div class="toolbar">
                                 <div class="tool tool-convert">
-                                    <a class="btn" href="#" data-toggle="tooltip" data-placement="top" title="Convert"><span class="glyphicon glyphicon-import"></span></a>
+                                    <a class="btn" href="{{ url('playlists/convert/youtube/spotify', [$playlist->id]) }}" data-toggle="tooltip" data-placement="top" title="Convert"><span class="glyphicon glyphicon-import"></span></a>
                                 </div>
                                 <div class="tool tool-context">
                                     <a href="#" class="btn" data-toggle="tooltip" data-placement="top" title="View Tracks"><span class="glyphicon glyphicon-th"></span></a>

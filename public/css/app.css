@@ -13142,6 +13142,15 @@ fieldset[disabled] .btn-spotify.active {
 
 .playlist-group .toolbar {
   float: right;
+  margin-right: 10px;
+}
+
+.playlist-group .toolbar .tool {
+  margin: 0 5px;
+}
+
+.playlist-group .toolbar a {
+  color: #444444;
 }
 
 .position-ref {

@@ -48,24 +48,23 @@ class PlaylistController extends Controller
                 }
             }
         }
-return view('playlist')->with(['spotifyplaylists' => $spotifyplaylists, 'youtubeplaylists' => $youtubeplaylists]);
-}
+        return view('playlist')->with(['spotifyplaylists' => $spotifyplaylists, 'youtubeplaylists' => $youtubeplaylists]);
+    }
 
-public
-function show($userid, $playlistid)
-{
-    try {
-        $value = session('spotify_token');
-        $api = new SpotifyWebAPI();
-        $api->setAccessToken($value);
-        $list = $api->getUserPlaylist($userid, $playlistid);
-        return view('track')->with('track', $list);
-    } catch (\Exception $e) {
-        if ($e->getCode() == 401) {
-            return redirect('spotify/refresh');
-        } else {
-            return dd($e);
+    public function show($userid, $playlistid)
+    {
+        try {
+            $value = session('spotify_token');
+            $api = new SpotifyWebAPI();
+            $api->setAccessToken($value);
+            $list = $api->getUserPlaylist($userid, $playlistid);
+            return view('track')->with('track', $list);
+        } catch (\Exception $e) {
+            if ($e->getCode() == 401) {
+                return redirect('spotify/refresh');
+            } else {
+                return dd($e);
+            }
         }
     }
-}
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< Updated upstream
         <div class="container-fluid" id="tracks">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -27,10 +28,21 @@
                             </div>
                             @endforeach
                         </div>
+=======
+    <div class="container-fluid" id="tracks">
+        <div class="row">
+            <div class="col-md-9 col-lg-10 col-md-offset-3 col-lg-offset-2">
+                <div class="panel panel">
+                    <div class="panel-heading">
+                        <h3>{{$track->name}}</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        {{-- dd($track) --}}
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
