@@ -9,22 +9,15 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example', require('./components/Example.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
-
 
 $( document ).ready(function() {
 
     if ($('#home').length) {
+        $('.navbar').find('.container').removeClass('container').addClass('container-fluid');
+        $('body').attr('id', 'particles-js');
+    }
+
+    if ($('#tracks').length) {
         $('.navbar').find('.container').removeClass('container').addClass('container-fluid');
         $('body').attr('id', 'particles-js');
     }
@@ -34,4 +27,17 @@ $( document ).ready(function() {
     });
 
     $('[data-toggle="tooltip"]').tooltip()
+
+});
+
+$('.play').click(function() {
+    $(this).closest(".playlist-group").find("audio")[0].play();
+    $(this).hide();
+    $(this).closest(".playlist-group").find(".pause").show();
+});
+
+$('.pause').click(function() {
+    $(this).closest(".playlist-group").find("audio")[0].pause();
+    $(this).hide();
+    $(this).closest(".playlist-group").find(".play").show();
 });

@@ -65,6 +65,44 @@ html, body {
     }
 }
 
+#tracks{
+    img{
+        margin-bottom: 10px;
+        margin-left: 50%;
+        transform: translate(-50%);
+    }
+    button{
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .pause{
+        display: none;
+    }
+    audio{
+        visibility: hidden;
+        position: absolute;
+    }
+    .group.playlist-group{
+        position: relative;
+        p{
+            margin: 0;
+            &.artists{
+                display: inline;
+                &:after{
+                    margin-left: 10px;
+                    margin-right: 7px;
+                    content: "-"
+                }
+            }
+            &:last-of-type:after{
+                display: none;
+            }
+        }
+    }
+}
+
 .youtube{
     color: $youtubeRed;
     &:hover{
