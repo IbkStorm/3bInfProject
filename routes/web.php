@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/youtube/login', 'YoutubeController@YoutubeLogin');
     Route::get('/youtube/callback', 'YoutubeController@YoutubeCallback');
+    Route::get('/youtube/refresh', 'YoutubeController@YoutubeRefresh');
 
     Route::get('playlists', 'PlaylistController@index');
     Route::get('playlists/{userid}/{playlistid}', 'PlaylistController@show');

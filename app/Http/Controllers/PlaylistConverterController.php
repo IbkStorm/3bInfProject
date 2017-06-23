@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Google_Service_YouTube_Playlist;
+use Google_Service_YouTube_PlaylistSnippet;
+use Google_Service_YouTube_PlaylistStatus;
 use Illuminate\Http\Request;
 use Google;
 use SpotifyWebAPI\SpotifyWebAPI;
@@ -20,7 +23,11 @@ class PlaylistConverterController extends Controller
 
             dd($list);
         }catch (\Exception $e){
-
+            if ($e->getCode() == 0) {
+                return redirect('youtube/login');
+            } else {
+                return dd($e);
+            }
         }
     }
 
@@ -40,16 +47,16 @@ class PlaylistConverterController extends Controller
             $youtubevalue = session('youtube_token');
             $googleClient->setAccessToken($youtubevalue);
             $youtube = Google::make('Youtube');
-            $new_playlist = $youtube->playlists->insert(array('snippet.title' => 'TEST'),
-                'snippet,status');
-            $new_playlist_id = $new_playlist->id;
+            $new_playlist_id = $this->createPlaylist($playlist->name);
 
             foreach ($playlistTracks->items as $track) {
                 $track = $track->track;
                 $search = $youtube->search->listSearch('snippet',
-                    array('maxResults' => 25, 'q' => $track->name, 'type' => 'video', 'videoCategoryId' => '10'));
+                    array('maxResults' => 1, 'q' => $track->name, 'type' => 'video', 'videoCategoryId' => '10'));
 
-                $VideoID = $search->items[0]->videoId;
+                foreach ($search->items as $item){
+                    $VideoID = $item->id->videoId;
+                }
 
                 $youtube->playlistItems->insert(array('snippet.playlistId' => $new_playlist_id,
                     'snippet.resourceId.kind' => 'youtube#video',
@@ -62,22 +69,46 @@ class PlaylistConverterController extends Controller
             return redirect('/palylists');
 
         } catch (\Exception $e) {
+            if ($e->getCode() == 0) {
+                return redirect('youtube/login');
+            } else {
                 return dd($e);
+            }
         }
     }
 
-    public function createPlaylist(){
+    public function createPlaylist($Playlist_Title){
 
-        $googleClient = Google::getClient();
-        $youtubevalue = session('youtube_token');
-        $googleClient->setAccessToken($youtubevalue);
-        $youtube = Google::make('Youtube');
-        $youtube->playlists->insert( array('snippet.title' => '',
-            'snippet.description' => '',
-            'snippet.tags[]' => '',
-            'snippet.defaultLanguage' => '',
-            'status.privacyStatus' => ''),
-            'snippet,status',
-            array('onBehalfOfContentOwner' => ''));
+        try{
+            $googleClient = Google::getClient();
+            $youtubevalue = session('youtube_token');
+            $googleClient->setAccessToken($youtubevalue);
+            $youtube = Google::make('Youtube');
+
+
+            // 1. Create the snippet for the playlist. Set its title and description.
+            $playlistSnippet = new Google_Service_YouTube_PlaylistSnippet();
+            $playlistSnippet->setTitle($Playlist_Title);
+            //$playlistSnippet->setDescription('A private playlist created with the YouTube API v3');
+
+            // 2. Define the playlist's status.
+            $playlistStatus = new Google_Service_YouTube_PlaylistStatus();
+            $playlistStatus->setPrivacyStatus('private');
+
+            // 3. Define a playlist resource and associate the snippet and status
+            // defined above with that resource.
+            $youTubePlaylist = new Google_Service_YouTube_Playlist();
+            $youTubePlaylist->setSnippet($playlistSnippet);
+            $youTubePlaylist->setStatus($playlistStatus);
+
+            // 4. Call the playlists.insert method to create the playlist. The API
+            // response will contain information about the new playlist.
+            $playlistResponse = $youtube->playlists->insert('snippet,status',
+                $youTubePlaylist, array());
+            $playlistId = $playlistResponse['id'];
+            return $playlistId;
+        }catch (\Exception $e) {
+            return dd($e);
+        }
     }
 }

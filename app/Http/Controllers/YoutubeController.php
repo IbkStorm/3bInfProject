@@ -25,4 +25,18 @@ class YoutubeController extends Controller
 
         return redirect('/playlists');
     }
+
+    public function YoutubeRefresh(){
+        $googleClient = Google::getClient();
+        if ($googleClient->isAccessTokenExpired()) {
+            $refresh_token = $googleClient->getRefreshToken();
+
+            $googleClient->fetchAccessTokenWithRefreshToken(session('youtube_token'));
+            $access_token = $googleClient->getAccessToken();
+            $access_token['refresh_token'] = $refresh_token;
+
+            return dd($refresh_token);
+            //session(['youtube_token' => $googleClient->getAccessToken()]);
+        }
+    }
 }
