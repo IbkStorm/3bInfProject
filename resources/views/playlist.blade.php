@@ -59,7 +59,7 @@
                                     <p>{{ $playlist->snippet->title }}</p>
                                 </div>
                                 <div class="playlist-info">
-                                    <p>Playlist <a href="#" class="youtube">Youtube</a></p>
+                                    <p>Playlist <a href="https://www.youtube.com/playlist?list={{ $playlist->id }}" class="youtube">Youtube</a></p>
                                 </div>
                             </div>
                             <div class="toolbar">

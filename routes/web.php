@@ -38,6 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::get('playlists/{userid}/{playlistid}', 'PlaylistController@show');
 
     Route::get('playlists/convert/spotify/youtube/{userid}/{playlistid}', 'PlaylistConverterController@SpotifyToYotubeConvert');
-    Route::get('playlists/convert/youtube/spotify/{$playlistid}', 'PlaylistConverterController@YoutubeToSpotifyConvert');
+    Route::get('playlists/convert/youtube/spotify/{playlistid}', 'PlaylistConverterController@YoutubeToSpotifyConvert');
     Route::get('playlist/create', 'PlaylistConverterController@createPlaylist');
 });

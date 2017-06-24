@@ -19,6 +19,8 @@ class SpotifyController extends Controller
             'scope' => [
                 'playlist-read-private',
                 'user-read-private',
+                'playlist-modify-private',
+                'playlist-modify-public',
             ],
         ];
 
