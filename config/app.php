@@ -171,6 +171,7 @@ return [
         \SocialiteProviders\Manager\ServiceProvider::class,
         Laracademy\Commands\MakeServiceProvider::class,
         PulkitJalan\Google\GoogleServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Google' => PulkitJalan\Google\Facades\Google::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

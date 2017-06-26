@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css\sweetalert.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
@@ -83,7 +84,9 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js\sweetalert.min.js') }}"></script>
     <script src="{{ asset('js/particles.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    @include('sweet::alert')
 </body>
 </html>

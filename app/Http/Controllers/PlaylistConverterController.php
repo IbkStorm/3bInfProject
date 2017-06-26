@@ -11,6 +11,7 @@ use Google_Service_YouTube_ResourceId;
 use Illuminate\Http\Request;
 use Google;
 use SpotifyWebAPI\SpotifyWebAPI;
+use Alert;
 
 class PlaylistConverterController extends Controller
 {
@@ -51,6 +52,7 @@ class PlaylistConverterController extends Controller
                 }catch (\Exception $e) {
                 }
             }
+            Alert::success('Playlist erfolgreich konvertiert')->persistent('Schließen');
             return redirect('playlists');
         }catch (\Exception $e){
             return dd($e);
@@ -88,7 +90,7 @@ class PlaylistConverterController extends Controller
                 $this->fillYoutubePlaylist($playlistId,$VideoID);
                 $count ++;
             }
-
+            Alert::success('Playlist erfolgreich konvertiert')->persistent('Schließen');
             return redirect('/playlists');
 
         } catch (\Exception $e) {

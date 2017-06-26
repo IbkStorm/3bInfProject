@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Soundcloud;
+use Alert;
 
 class HomeController extends Controller
 {
@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        Alert::success('Good job!')->persistent("Close");
        return view('home');
     }
 }

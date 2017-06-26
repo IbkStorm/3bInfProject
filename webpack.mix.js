@@ -13,4 +13,6 @@ const { mix } = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-.js('resources/assets/js/particles.js', 'public/js');
+.js('resources/assets/js/particles.js', 'public/js')
+.copyDirectory('node_modules/sweetalert/dist/sweetalert.css', 'public/css')
+.copyDirectory('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js');
