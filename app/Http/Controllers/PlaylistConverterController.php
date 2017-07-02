@@ -9,8 +9,8 @@ use Google_Service_YouTube_PlaylistSnippet;
 use Google_Service_YouTube_PlaylistStatus;
 use Google_Service_YouTube_ResourceId;
 use Illuminate\Http\Request;
-use Google;
-use SpotifyWebAPI\SpotifyWebAPI;
+use App\Spotify;
+use App\YouTube;
 use Alert;
 
 class PlaylistConverterController extends Controller
@@ -23,10 +23,8 @@ class PlaylistConverterController extends Controller
     public function YoutubeToSpotifyConvert($playlistID){
 
         try{
-            $googleClient = Google::getClient();
             $youtubevalue = session('youtube_token');
-            $googleClient->setAccessToken($youtubevalue);
-            $youtube = Google::make('Youtube');
+            $youtube = YouTube::make($youtubevalue);
             $list = $youtube->playlists->listPlaylists('snippet,contentDetails',
                 array('id' => $playlistID));
             $youtubeplaylist_title = $list->items[0]->snippet->title;
@@ -41,8 +39,7 @@ class PlaylistConverterController extends Controller
 
         try{
             $value = session('spotify_token');
-            $api = new SpotifyWebAPI();
-            $api->setAccessToken($value);
+            $api = Spotify::make($value);
             $me = $api->me();
             $spotifyplaylist = $api->createUserPlaylist($me->id, ['name' => $youtubeplaylist_title]);
             foreach ($youtubeplaylistItems as $item) {
@@ -63,8 +60,7 @@ class PlaylistConverterController extends Controller
         $count = 1;
         try {
             $value = session('spotify_token');
-            $api = new SpotifyWebAPI();
-            $api->setAccessToken($value);
+            $api = Spotify::make($value);
             $playlist = $api->getUserPlaylist($userid, $playlistid);
             $playlistTracks = $api->getUserPlaylistTracks($userid, $playlistid);
             //return dd($playlistTracks);
@@ -72,10 +68,8 @@ class PlaylistConverterController extends Controller
                 return dd($e);
         }
         try {
-            $googleClient = Google::getClient();
             $youtubevalue = session('youtube_token');
-            $googleClient->setAccessToken($youtubevalue);
-            $youtube = Google::make('Youtube');
+            $youtube = YouTube::make($youtubevalue);
             $playlistId = $this->createYoutubePlaylist($playlist->name);
 
             foreach ($playlistTracks->items as $track) {
@@ -105,10 +99,8 @@ class PlaylistConverterController extends Controller
     public function createYoutubePlaylist($Playlist_Title){
 
         try{
-            $googleClient = Google::getClient();
             $youtubevalue = session('youtube_token');
-            $googleClient->setAccessToken($youtubevalue);
-            $youtube = Google::make('Youtube');
+            $youtube = YouTube::make($youtubevalue);
 
 
             // 1. Create the snippet for the playlist. Set its title and description.
@@ -139,10 +131,8 @@ class PlaylistConverterController extends Controller
 
     public function fillYoutubePlaylist($playlistId, $VideoID){
 
-        $googleClient = Google::getClient();
         $youtubevalue = session('youtube_token');
-        $googleClient->setAccessToken($youtubevalue);
-        $youtube = Google::make('Youtube');
+        $youtube = YouTube::make($youtubevalue);
 
         // 5. Add a video to the playlist. First, define the resource being added
         // to the playlist by setting its video ID and kind.

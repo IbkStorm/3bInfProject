@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mockery\Exception;
-use SpotifyWebAPI\SpotifyWebAPI;
-use SpotifyWebAPI\Session;
-use Google;
+use App\Spotify;
+use App\YouTube;
 
 class PlaylistController extends Controller
 {
@@ -17,8 +16,7 @@ class PlaylistController extends Controller
         if (session('spotify_token') != null) {
             try {
                 $value = session('spotify_token');
-                $api = new SpotifyWebAPI();
-                $api->setAccessToken($value);
+                $api = Spotify::make($value);
                 $spotifyplaylists = $api->getMyPlaylists();
 
             } catch (\Exception $e) {
@@ -34,10 +32,8 @@ class PlaylistController extends Controller
         if (session('youtube_token') != null) {
 
             try {
-                $googleClient = Google::getClient();
                 $youtubevalue = session('youtube_token');
-                $googleClient->setAccessToken($youtubevalue);
-                $youtube = Google::make('Youtube');
+                $youtube = YouTube::make($youtubevalue);
                 $youtubeplaylists = $youtube->playlists->listPlaylists('snippet,contentDetails', array('mine' => true));
 
             } catch (\Exception $e) {
@@ -55,8 +51,7 @@ class PlaylistController extends Controller
     {
         try {
             $value = session('spotify_token');
-            $api = new SpotifyWebAPI();
-            $api->setAccessToken($value);
+            $api = Spotify::make($value);
             $list = $api->getUserPlaylist($userid, $playlistid);
             return view('track')->with('track', $list);
         } catch (\Exception $e) {
